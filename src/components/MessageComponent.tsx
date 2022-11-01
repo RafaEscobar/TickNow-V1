@@ -20,6 +20,8 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     title: {
+        padding: 10,
+        //backgroundColor: 'yellow',
         fontSize: 25,
         color: 'black'
     }

@@ -22,16 +22,17 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   box: {
-    left: 30,
-    top: 15,
+    //backgroundColor: 'yellow',
+    padding: 30,
   },
   title: {
-    fontSize: 25,
+    paddingTop: 10,
+    fontSize: 30,
     marginBottom: 20,
     fontWeight: 'bold',
   },
   text: {
-    fontSize: 15,
+    fontSize: 17,
     marginBottom: 15,
   },
   
