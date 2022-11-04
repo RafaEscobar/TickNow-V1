@@ -15,8 +15,6 @@ export const CustomDrawerComponent = (props:any) => {
             <DrawerItemList {...props} />
         </DrawerContentScrollView>
     </View>
-        
-
   )
 }
 
@@ -33,6 +31,6 @@ const styles = StyleSheet.create({
         fontSize: 15,
         color: 'black',
         marginTop: 30,
-        left: 40,
+        left: 35,
     }
 });

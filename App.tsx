@@ -5,15 +5,21 @@ import { DrawerNavigator } from './src/navigation/DrawerNavigator';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { NativeBaseProvider } from 'native-base';
+import { TaskListComponent } from './src/components/TaskListComponent';
 
 export const App = () => {
   return (
+    /*
     <NativeBaseProvider>
       <NavigationContainer>
-        {/* Llamado del DrawerNavigator */}
+
         <DrawerNavigator />
       </NavigationContainer>
     </NativeBaseProvider>
+    */
+   <NativeBaseProvider>
+     <TaskListComponent />
+   </NativeBaseProvider>
     
   )
 }

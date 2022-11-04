@@ -21,10 +21,7 @@ const styles = StyleSheet.create({
     },
     title: {
         padding: 10,
-        //backgroundColor: 'yellow',
         fontSize: 25,
         color: 'black'
     }
-
-
 });
