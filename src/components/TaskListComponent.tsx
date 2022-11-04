@@ -35,16 +35,15 @@ export const TaskListComponent = () => {
         })
     }
 
-    function onChangeText(v) {
+    function onChangeText(v: React.SetStateAction<string>) {
         setInputValue(v);
     }
     
     function onTaskCreated() {
-
         if(inputValue != '') {
             toast.show({
                 title: 'Tarea creada',
-                status: 'success'
+                status: 'success',
             });
             
             setTask(function(currentTask) {
