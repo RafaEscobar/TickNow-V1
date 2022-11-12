@@ -8,7 +8,6 @@ import { ProyectsScreen } from '../screens/ProyectsScreen';
 import { HabitsScreen } from '../screens/HabitsScreen';
 import { TasksScreen } from '../screens/TasksScreen';
 import { PointsScreen } from '../screens/PointsScreen';
-
 // #3 Importamos el lugar de extracción de los iconos
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -22,7 +21,7 @@ import { TouchableOpacity } from 'react-native';
 // #4 Creamos la constante receptora de -createBottomTabNavigator-
 const Tab = createBottomTabNavigator();
 
-export const TabNavigator = () => {
+export const TabNavigator = ({ navigation }:any) => {
   // #14 Declaramos la constante de control pare el -useNavigation-
   const navigatio = useNavigation();
   return (
@@ -81,6 +80,7 @@ export const TabNavigator = () => {
         {/* Screen Habitos */}
       <Tab.Screen 
         name='Habitos' 
+        
         component={ HabitsScreen } 
         options={{
           tabBarLabel: 'Hábitos',
@@ -128,6 +128,7 @@ export const TabNavigator = () => {
           },
         }}
       />
+
     </Tab.Navigator>
   )
 }

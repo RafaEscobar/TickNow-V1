@@ -2,30 +2,31 @@ import { Box, Button, Checkbox, CloseIcon, HStack, IconButton, Text, View } from
 import React, { useState } from 'react'
 import { StyleSheet } from 'react-native';
 
-const initial = [
+const initialTasks = [
     // Cada tarea tiene un titulo y un estado
     {
-        name: '',
+        title: 'Salir a caminar',
+        isCompleted: false
     },
-  ]
-  
-export const TasksScreen = ({ navigation, route }:any) => {
+]
 
-    // #4 Generamos el useState
-    const [task, setTask] = useState(initial);
+export const PruebaPage = ({ navigation, route }:any) => {
 
-    // #7 Funcion para eliminar tarea
+        // #4 Generamos el useState
+        const [task, setTask] = useState(initialTasks);
+
+        // #7 Funcion para eliminar tarea
     function handleDelete(indexToDelete:number) {
-        setTask(function(currentTasks:any) {
+        setTask(function(currentTasks) {
             // Retorna todas las tareas (currentTask) sin la tarea eliminada a partir de un indice asociado
-            return currentTasks.filter((_:any, index:any) => index != indexToDelete );
+            return currentTasks.filter((_, index) => index != indexToDelete );
         })
     }
 
     // #8 Funcion para cambiar el estado de la tarea... completado o NO completado
     function handleStatusChange(indexToChange: number) {
         // Con el estado del Task
-        setTask(function(currentTask:any) {
+        setTask(function(currentTask) {
             const newTask = [ ...currentTask ];
             // Esta completado al ser diferente de completado
             newTask[indexToChange].isCompleted = !newTask[indexToChange].isCompleted
@@ -34,8 +35,16 @@ export const TasksScreen = ({ navigation, route }:any) => {
     }
 
     return (
+        // <View style={ styles.container }>
+        //   <Text style={ styles.title }>DATA:</Text>
+          
+        //   <Text style={ styles.text }>{route.params.names[0]}</Text>
+        //   <Text style={ styles.text }>{route.params.names[1]}</Text>
+        //   <Button onPress={() => navigation.goBack()}>Regresar</Button>
+        // </View>
+
         <Box >
-            {task.map( (task:any, index:any) => (
+            {task.map( (task, index) => (
                     // #24 HStack que contiene (checkbox, text y btnClose)
                     <HStack
                         w="100%"
@@ -86,26 +95,29 @@ export const TasksScreen = ({ navigation, route }:any) => {
                 ) )}
         </Box>
     );
-}
+  }
 
 const styles = StyleSheet.create({
+
     caja: {
         // backgroundColor:'yellow'
         height: 50,
         borderWidth: 2,
         borderRadius: 10,
         borderColor: 'blue',
-        padding:10,
+        padding:10
+        
     },
     text: {
         fontSize: 18,
-        color: 'black',
+        color: 'black'
     },
     rctCheckBox: {
         height: 22,
         width: 22,
         borderRadius: 12,
     },
+
 });
 
 

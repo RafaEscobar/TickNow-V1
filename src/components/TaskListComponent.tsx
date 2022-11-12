@@ -126,7 +126,6 @@ export const TaskListComponent = () => {
                             value={ task.title }
                             accessibilityLabel={ task.title }
                         />
-
                         <Text
                             width = "100%"
                             flexShrink = { 1 }
@@ -137,7 +136,6 @@ export const TaskListComponent = () => {
                         >
                             {/* #30 El texto del <Text> es el title de la tarea */}
                             { task.title }
-
                         </Text>
                         {/* #31 BTN para borrar tarea */}
                         <IconButton 
