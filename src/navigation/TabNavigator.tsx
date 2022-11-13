@@ -41,6 +41,9 @@ export const TabNavigator = ({ navigation }:any) => {
           case 'Habitos':
             nameIcon= focused ? 'trophy' : 'trophy-outline';
           break;
+          case 'Agregar':
+            nameIcon= focused ? 'add' : 'add-outline';
+          break;
           case 'Tareas':
             nameIcon= focused ? 'checkmark-circle' : 'checkmark-circle-outline';
           break;
@@ -94,7 +97,22 @@ export const TabNavigator = ({ navigation }:any) => {
           },
         }}
       />
-        {/* Screen Add */}
+      {/* Screen Add  ========================================== */}
+      <Tab.Screen 
+        name='Agregar' 
+        component={ TasksScreen } 
+        options={{
+          tabBarLabel: 'Agregar',
+          headerShown: true,
+          headerLeft: () => {
+            return (
+              <TouchableOpacity onPress={()=>navigatio.dispatch(DrawerActions.openDrawer)}>
+                <Icon name='reorder-three' color='dark' size={ 30 } style={{ marginLeft: 10 }} />
+              </TouchableOpacity>
+            );
+          },
+        }}
+      />
 
         {/* Screen Tareas */}
       <Tab.Screen 
@@ -112,6 +130,7 @@ export const TabNavigator = ({ navigation }:any) => {
           },
         }}
       />
+
         {/* Screen Productividad */}
       <Tab.Screen 
         name='Productividad' 

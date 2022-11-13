@@ -14,6 +14,7 @@ import { ListPage } from '../pages/ListPage'
 import { CustomDrawerComponent } from '../components/CustomDrawerComponent'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { TasksScreen } from '../screens/TasksScreen'
+import { ProductivityPointComponent } from '../components/ProductivityPointComponent'
 
 // #4 Creamos la constante receptora de -createDrawerNavigator-
 export const Drawer = createDrawerNavigator();
@@ -55,7 +56,9 @@ export const DrawerNavigator = () => {
       <Drawer.Screen 
         name='Crear Habito TEST' 
         // options={{ headerShown: false }}  
-        component={ Root }
+        // component={ Root }
+        component={ CreateHabitPage }
+
       
       />
         <Drawer.Screen 
